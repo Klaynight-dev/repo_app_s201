@@ -10,12 +10,17 @@ public class Cours {
     private int duree;
     private String option;
     private ArrayList<Eleve> elevesInscrits;
-    private Professeur Professeur;
-    private Salle Salle;
-    private String Niveau;
     private Professeur professeur;
+    private Salle salle;
+    private String niveau;
 
-    public Cours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) {
+    public Cours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n, ArrayList<Eleve> e) 
+    {
+        this.id = i;
+        this.tarif = t;
+        this.dateheure = dh;
+        this.danse = da;
+        this.duree = d;
         this.option = o;
         this.elevesInscrits = e;
         this.professeur = p;
