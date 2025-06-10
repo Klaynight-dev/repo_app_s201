@@ -77,8 +77,8 @@ public class CtrlModifCours {
         professeurField.setText((cours.getProfesseur()).getNom());
         coursNameField.setText(cours.getDanse());
         niveauField.setText(cours.getNiveau());
-        horaireField.setText(cours.getDateheure().split(" ")[1]);
-        jourField.setText(cours.getDateheure().split(" ")[0]);
+        horaireField.setText(cours.getHoraire());
+        jourField.setText(cours.getJour());
         dureeField.setText(String.valueOf(cours.getDuree()));
         optionDureeField.setText(cours.getOption());
         lieuSalleField.setText((cours.getSalle()).getNom());

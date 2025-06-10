@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Cours {
     private int id;
     private float tarif;
-    private String dateheure;
+    private String jour;
+    private String horaire;
     private String danse;
     private int duree;
     private String option;
@@ -14,11 +15,12 @@ public class Cours {
     private Salle salle;
     private String niveau;
 
-    public Cours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n, ArrayList<Eleve> e) 
+    public Cours(int i, float t, String j, String h, String da, int d, String o, Professeur p, Salle s, String n, ArrayList<Eleve> e) 
     {
         this.id = i;
         this.tarif = t;
-        this.dateheure = dh;
+        this.jour = j;
+        this.horaire = h;
         this.danse = da;
         this.duree = d;
         this.option = o;
@@ -28,11 +30,12 @@ public class Cours {
         this.niveau = n;
     }
 
-    public Cours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) 
+    public Cours(int i, float t, String j, String h, String da, int d, String o, Professeur p, Salle s, String n) 
     {
         this.id = i;
         this.tarif = t;
-        this.dateheure = dh;
+        this.jour = j;
+        this.horaire = h;
         this.danse = da;
         this.duree = d;
         this.option = o;
@@ -53,9 +56,14 @@ public class Cours {
         return tarif;
     }
 
-    public String getDateheure()
+    public String getJour()
     {
-        return dateheure;
+        return jour;
+    }
+    
+    public String getHoraire()
+    {
+        return horaire;
     }
 
     public String getDanse()
@@ -104,9 +112,14 @@ public class Cours {
         this.tarif = tarif;
     }
 
-    public void setDateheure(String dateheure)
+    public void setJour(String jour)
     {
-        this.dateheure = dateheure;
+        this.jour = jour;
+    }
+    
+    public void setHoraire(String horaire)
+    {
+        this.horaire = horaire;
     }
 
     public void setDanse(String danse)
@@ -154,7 +167,8 @@ public class Cours {
         return "Cours{" +
                 "id=" + id +
                 ", tarif=" + tarif +
-                ", dateheure='" + dateheure + '\'' +
+                ", jour='" + jour + '\'' +
+                ", horaire='" + horaire + '\'' +
                 ", danse='" + danse + '\'' +
                 ", duree=" + duree +
                 ", option='" + option + '\'' +

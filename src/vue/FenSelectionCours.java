@@ -21,7 +21,7 @@ public class FenSelectionCours extends Stage
 
 	private Pane creerSceneGraph() throws IOException
 	{
-		File f = new File("C:/Users/Elouan/cours1/demo10/src/main/resources/main_SAE_201.fxml");
+		File f = new File("src/ressources/main_SAE_201.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(f.toURI().toURL());
 		Pane racine = loader.load();

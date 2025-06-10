@@ -64,16 +64,16 @@ public class Main extends Application{
 	// gestion des données : les modifications
 	//////////////////////////////////////////
 	
-	static public void ajouterCours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) {
+	static public void ajouterCours(int i, float t, String j,String h, String da, int d, String o, Professeur p, Salle s, String n) {
 		// créer le nouvel employé
-		Cours c = new Cours(i, t, dh, da, d, o, p, s, n);
+		Cours c = new Cours(i, t, j,h, da, d, o, p, s, n);
 		// enregistrer l'ajout
 		EmploiDuTemps.ajouterCours(c);
 	}
 	
-	static public void modifierCours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) {
+	static public void modifierCours(int i, float t, String j,String h, String da, int d, String o, Professeur p, Salle s, String n) {
 		// créer le nouvel employé
-		Cours c = new Cours(i, t, dh, da, d, o, p, s, n);
+		Cours c = new Cours(i, t, j,h, da, d, o, p, s, n);
 		// appel à la méthode de la classe Donnees pour enregistrer la modif ; Penser à fermer la fenêtre
 		EmploiDuTemps.modifierCours(c);	
 	}

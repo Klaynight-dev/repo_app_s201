@@ -9,10 +9,9 @@ import javafx.collections.ObservableList;
 public class EmploiDuTemps
 {
 	private int semaine;
-	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "test", "test2", 10, "rien", 
-												new Professeur(0, "Professeur Test", ""), 
-												new Salle(0, "Salle Test", true, false, false), 
-												"Débutant", new ArrayList<>(List.of(new Eleve(0, null, false, false)))));
+	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "golem", "minuit", "zouk", 30, "rien",
+			new Professeur(0, "rien", "zouk"),
+			new Salle(0, "olympia", true, false, false), "grand maître"));
 
 	public EmploiDuTemps(int s)
 	{

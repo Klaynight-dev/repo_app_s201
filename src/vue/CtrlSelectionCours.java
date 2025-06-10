@@ -1,20 +1,35 @@
 package vue;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import controleur.Main;
 import modele.*;
 import vue.*;
 
 public class CtrlSelectionCours {
 
+	@FXML
+	private Button bnSupprimer;
+	
+	@FXML
+	private Button bnModifier;
+	
+	@FXML
+	private Button bnAjouter;
+	
     @FXML
     private TableColumn<Cours, String> jourColumn;
 
@@ -109,12 +124,32 @@ public class CtrlSelectionCours {
         professeurColumn.setCellValueFactory(new PropertyValueFactory<>("professeur"));
         dureeColumn.setCellValueFactory(new PropertyValueFactory<>("duree"));
         optionDureeColumn.setCellValueFactory(new PropertyValueFactory<>("option"));
-        lieuSalleColumn.setCellValueFactory(new PropertyValueFactory<>("lieuSalle"));
+        lieuSalleColumn.setCellValueFactory(new PropertyValueFactory<>("salle"));
         coursNameColumn.setCellValueFactory(new PropertyValueFactory<>("danse"));
         niveauColumn.setCellValueFactory(new PropertyValueFactory<>("niveau"));
 
         courseTable.setItems(Main.getCours());
         courseTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        
+        BooleanBinding rien =
+				 Bindings.equal(courseTable.getSelectionModel().selectedIndexProperty()
+				, -1);
+		
+		bnSupprimer.disableProperty().bind(rien);
+		
+		bnModifier.disableProperty().bind(rien);
+		
+		MenuItem optionAjouter = new MenuItem("Ajouter...");
+		MenuItem optionModifier = new MenuItem("Modifier...");
+		MenuItem optionSupprimer = new MenuItem("Supprimer");
+
+		ContextMenu menu = new ContextMenu( optionAjouter,
+				 new SeparatorMenuItem(),
+				 optionModifier,
+				 new SeparatorMenuItem(),
+				 optionSupprimer
+				 );
+		courseTable.setContextMenu(menu);
     }
 
 }
