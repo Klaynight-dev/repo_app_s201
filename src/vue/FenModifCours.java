@@ -26,7 +26,7 @@ public class FenModifCours extends Stage
 
 	private Pane creerSceneGraph() throws IOException
 	{
-		File f = new File("/home/etuinfo/mquentel/Documents/IHM/fxDOO/edit.fxml");
+		File f = new File("C:/Users/Elouan/cours1/demo10/src/main/resources/edit.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(f.toURI().toURL());
 		Pane racine = loader.load();

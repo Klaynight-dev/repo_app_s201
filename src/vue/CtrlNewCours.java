@@ -36,7 +36,7 @@ public class CtrlNewCours {
     @FXML
     void handleOk(ActionEvent event)
     {
-    	int idProf = Integer.parseInt(this.getId().getSelectionModel().getSelectedItem());
+    	/*int idProf = Integer.parseInt(this.getId().getSelectionModel().getSelectedItem());
     	if (cbSuperieur.getSelectionModel().getSelectedIndex()==0 || cbSuperieur.getSelectionModel().getSelectedIndex()==-1) {
     		sup = -1;
     	} else {
@@ -64,13 +64,13 @@ public class CtrlNewCours {
 								sal,
 								prime,
 								Integer.parseInt(cbDepartement.getSelectionModel().getSelectedItem())
-    	);
+    	);*/
     }
 
     @FXML
     void handleCancel(ActionEvent event)
     {
-    	Main.fermerModifCours();
+    	Main.fermerNewCours();
     }
 
 	void afficherCours(Cours cours) {

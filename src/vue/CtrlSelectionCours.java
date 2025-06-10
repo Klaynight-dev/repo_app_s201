@@ -74,7 +74,7 @@ public class CtrlSelectionCours {
     void clicModifier(ActionEvent event) {
         Cours selectedCours = courseTable.getSelectionModel().getSelectedItem();
         if (selectedCours != null) {
-            Main.ouvrirModifCours(selectedCours);
+            Main.ouvrirModifCours();
         }
     }
 

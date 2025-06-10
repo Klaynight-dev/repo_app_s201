@@ -11,6 +11,7 @@ import vue.*;
 public class Main extends Application{
 	static private FenModifCours fModifCours;
 	static private FenSelectionCours fSelecCours;
+	static private FenNewCours fNewCours;
 	
 	public void start(Stage f) throws Exception
 	{
@@ -18,6 +19,8 @@ public class Main extends Application{
 		//initialisation des fenêtres
 		fModifCours = new FenModifCours();
 		fModifCours.initModality(Modality.APPLICATION_MODAL);
+		fNewCours = new FenNewCours();
+		fNewCours.initModality(Modality.APPLICATION_MODAL);
 		fSelecCours = new FenSelectionCours();
 		fSelecCours.setMinHeight(270);
 		fSelecCours.setMinWidth(525);
@@ -38,10 +41,11 @@ public class Main extends Application{
 	// gestion des fenêtres //
 	//////////////////////////
 	
-	static public void ouvrirNewCours() {
-		fSelecCours.show();
+	static public void ouvrirNewCours()
+	{
+		fNewCours.show();
 	}
-	
+
 	static public void ouvrirModifCours()
 	{
 		fModifCours.show();
@@ -51,21 +55,25 @@ public class Main extends Application{
 	{
 		fModifCours.close();
 	}
+	static public void fermerNewCours()
+	{
+		fNewCours.close();
+	}
 
 	//////////////////////////////////////////
 	// gestion des données : les modifications
 	//////////////////////////////////////////
 	
-	static public void ajouterCours(int i, float t, String dh, String da, int d, String o) { 
+	static public void ajouterCours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) {
 		// créer le nouvel employé
-		Cours c = new Cours(i, t, dh, da, d, o);
+		Cours c = new Cours(i, t, dh, da, d, o, p, s, n);
 		// enregistrer l'ajout
 		EmploiDuTemps.ajouterCours(c);
 	}
 	
-	static public void modifierCours(int i, float t, String dh, String da, int d, String o) { 
+	static public void modifierCours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) {
 		// créer le nouvel employé
-		Cours c = new Cours(i, t, dh, da, d, o);
+		Cours c = new Cours(i, t, dh, da, d, o, p, s, n);
 		// appel à la méthode de la classe Donnees pour enregistrer la modif ; Penser à fermer la fenêtre
 		EmploiDuTemps.modifierCours(c);	
 	}
