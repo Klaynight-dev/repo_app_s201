@@ -24,4 +24,44 @@ public class Professeur
 		this.danse = d;
 		this.enseigne = e;
 	}
+
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public String getNom()
+	{
+		return this.nom;
+	}
+
+	public String getDanse()
+	{
+		return this.danse;
+	}
+
+	public ArrayList<Cours> getEnseigne()
+	{
+		return this.enseigne;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
+	public void setNom(String nom)
+	{
+		this.nom = nom;
+	}
+
+	public void setDanse(String danse)
+	{
+		this.danse = danse;
+	}
+
+	public void setEnseigne(ArrayList<Cours> enseigne)
+	{
+		this.enseigne = enseigne;
+	}
 }

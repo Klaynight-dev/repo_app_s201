@@ -1,19 +1,18 @@
 package vue;
 
-import java.io.File;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.scene.layout.Pane;
-import javafx.fxml.FXMLLoader;
 
+public class FenNewCours extends Stage {
 
-public class FenSelectionCours extends Stage {
+    private CtrlModifCours ctrl;
 
-    private CtrlSelectionCours ctrl;
-
-    public FenSelectionCours() throws IOException {
+    public FenNewCours() throws IOException {
         this.setTitle("Sélection des cours");
         this.setResizable(true);
         Scene laScene = new Scene(creerSceneGraph());
@@ -21,7 +20,7 @@ public class FenSelectionCours extends Stage {
     }
 
     private Pane creerSceneGraph() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main_SAE_201.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/edit.fxml"));
         Pane racine = loader.load();
         ctrl = loader.getController();
         return racine;

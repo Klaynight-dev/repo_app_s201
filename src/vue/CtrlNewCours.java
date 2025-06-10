@@ -3,11 +3,9 @@ package vue;
 import controleur.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
-import modele.Cours;
 
-public class CtrlModifCours {
+public class CtrlNewCours {
 
     @FXML
     private TextField professeurField;
@@ -46,14 +44,5 @@ public class CtrlModifCours {
     }
 
 
-    void afficherCours(Cours cours) {
-        professeurField.setText((cours.getProfesseur()).getNom());
-        coursNameField.setText(cours.getDanse());
-        niveauField.setText(cours.getNiveau());
-        horaireField.setText(cours.getDateheure().split(" ")[1]);
-        jourField.setText(cours.getDateheure().split(" ")[0]);
-        dureeField.setText(String.valueOf(cours.getDuree()));
-        optionDureeField.setText(cours.getOption());
-        lieuSalleField.setText((cours.getSalle()).getNom());
-    }
+    
 }

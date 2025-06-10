@@ -8,14 +8,9 @@ import javafx.collections.ObservableList;
 public class EmploiDuTemps
 {
 	private int semaine;
-	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "test", "test2", 10, "rien"));
+	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "test", "test2", 10, "rien", new Professeur(1, "test", "test"), new Salle(1, "test", true, true, true ), "test3"));
 	
 	public EmploiDuTemps(int s)
-	{
-		this.semaine = s;
-	}
-	
-	public EmploiDuTemps(int s, ArrayList<Cours> c)
 	{
 		this.semaine = s;
 	}
