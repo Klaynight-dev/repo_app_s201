@@ -66,7 +66,7 @@ public class CtrlSelectionCours {
     void handleEditCourse(ActionEvent event) {
         Cours selectedCours = courseTable.getSelectionModel().getSelectedItem();
         if (selectedCours != null) {
-            Main.ouvrirModifCours(); //selectedCours
+        	Main.ouvrirModifCours(selectedCours); //selectedCours
         }
     }
 
@@ -89,7 +89,7 @@ public class CtrlSelectionCours {
     void clicModifier(ActionEvent event) {
         Cours selectedCours = courseTable.getSelectionModel().getSelectedItem();
         if (selectedCours != null) {
-            Main.ouvrirModifCours();
+            Main.ouvrirModifCours(selectedCours);
         }
     }
 
@@ -97,7 +97,7 @@ public class CtrlSelectionCours {
     @FXML void clicSupprimer(ActionEvent event) {
     	Alert alert = new Alert(
     			AlertType.CONFIRMATION,
-    			"Voulez-vous vraiment supprimer cet employé ?",
+    			"Voulez-vous vraiment supprimer ce cours ?",
     			ButtonType.YES,
     			ButtonType.NO
     			);

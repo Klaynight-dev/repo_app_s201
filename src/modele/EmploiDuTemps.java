@@ -9,9 +9,24 @@ import javafx.collections.ObservableList;
 public class EmploiDuTemps
 {
 	private int semaine;
-	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "golem", "minuit", "zouk", 30, "rien",
-			new Professeur(0, "rien", "zouk"),
-			new Salle(0, "olympia", true, false, false), "grand maître"));
+	private static ObservableList<Cours> cours  = FXCollections.observableArrayList();
+	
+	
+	static public void chargementDonnees() {
+		cours.add(new Cours(0, 0, "golem", "minuit", "zouk", 30, "rien",
+				new Professeur("rien", "zouk"),
+				new Salle("olympia", true, false, false), "grand maître"));
+		
+		cours.add(new Cours(1, 0, "jaaj", "midi", "macarena", 30, "tout",
+				new Professeur("rien", "macarena"),
+				new Salle("olympia", true, false, false), "nul"));
+
+		cours.add(new Cours(2, 0, "aaaaajj", "zzjioaz", "wawawa", 30, "milieu",
+				new Professeur("rien", "zouk"),
+				new Salle("olympia", true, false, false), "intermediarie"));
+
+
+	}
 
 	public EmploiDuTemps(int s)
 	{
@@ -48,13 +63,17 @@ public class EmploiDuTemps
 	}
 	
 	public static void modifierCours(Cours c)
-	{
-		for(Cours iter : cours)
+	{		
+		boolean trouve = false;
+		int i=0;
+		while (!trouve && i < cours.size())
 		{
-			if(c == iter) // Comparaison du cours sur l'id seulement
+			if ( cours.get(i).getId() == c.getId())
 			{
-				iter = c;
+				cours.set(i, c);
+				trouve = true;
 			}
+			i++;
 		}
 	}
 	

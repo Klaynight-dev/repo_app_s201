@@ -4,25 +4,28 @@ import java.util.ArrayList;
 
 public class Professeur
 {
+	private static int nbProf = 0;
 	int id;
 	String nom;
 	String danse;
 	ArrayList<Cours> enseigne;
 	
-	public Professeur(int i, String n, String d)
+	public Professeur(String n, String d)
 	{
-		this.id = i;
+		this.id = nbProf;
 		this.nom = n;
 		this.danse = d;
 		this.enseigne = new ArrayList<Cours>();
+		nbProf++;
 	}
 	
-	public Professeur(int i, String n, String d, ArrayList<Cours> e)
+	public Professeur(String n, String d, ArrayList<Cours> e)
 	{
-		this.id = i;
+		this.id = nbProf;
 		this.nom = n;
 		this.danse = d;
 		this.enseigne = e;
+		nbProf++;
 	}
 
 	public int getId() {
@@ -75,7 +78,7 @@ public class Professeur
 	@Override
 	public String toString()
 	{
-		return "Professeur " + this.nom + " enseignant " + this.danse + " avec l'id " + this.id + " et les cours " + this.enseigne;
+		return this.nom + " enseignant " + this.danse;
 	}
 	public void afficher()
 	{

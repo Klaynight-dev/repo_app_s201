@@ -17,6 +17,9 @@ public class Main extends Application{
 	{
 		
 		//initialisation des fenêtres
+		
+		EmploiDuTemps.chargementDonnees();
+
 		fModifCours = new FenModifCours();
 		fModifCours.initModality(Modality.APPLICATION_MODAL);
 		fNewCours = new FenNewCours();
@@ -46,8 +49,9 @@ public class Main extends Application{
 		fNewCours.show();
 	}
 
-	static public void ouvrirModifCours()
+	static public void ouvrirModifCours(Cours c)
 	{
+		fModifCours.afficherCours(c);
 		fModifCours.show();
 	}
 	
@@ -75,7 +79,8 @@ public class Main extends Application{
 		// créer le nouvel employé
 		Cours c = new Cours(i, t, j,h, da, d, o, p, s, n);
 		// appel à la méthode de la classe Donnees pour enregistrer la modif ; Penser à fermer la fenêtre
-		EmploiDuTemps.modifierCours(c);	
+		EmploiDuTemps.modifierCours(c);
+		fModifCours.close();
 	}
 	
 

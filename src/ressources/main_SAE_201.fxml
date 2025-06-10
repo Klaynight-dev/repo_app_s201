@@ -30,7 +30,7 @@
            <children>
                <Button fx:id="bnAjouter" onAction="#handleAddCourse" text="Ajouter Cours" />
                <Button fx:id="bnModifier" onAction="#handleEditCourse" text="Modifier Cours" />
-               <Button fx:id="bnSupprimer" onAction="#handleDeleteCourse" text="Supprimer Cours" />
+               <Button fx:id="bnSupprimer" onAction="#clicSupprimer" text="Supprimer Cours" />
            </children>
         </HBox>
    </bottom>
