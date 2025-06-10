@@ -1,6 +1,7 @@
 package modele;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,9 +9,17 @@ import javafx.collections.ObservableList;
 public class EmploiDuTemps
 {
 	private int semaine;
-	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "test", "test2", 10, "rien", new Professeur(1, "test", "test"), new Salle(1, "test", true, true, true ), "test3"));
-	
+	private static ObservableList<Cours> cours  = FXCollections.observableArrayList(new Cours(0, 0, "test", "test2", 10, "rien", 
+												new Professeur(0, "Professeur Test", ""), 
+												new Salle(0, "Salle Test", true, false, false), 
+												"Débutant", new ArrayList<>(List.of(new Eleve(0, null, false, false)))));
+
 	public EmploiDuTemps(int s)
+	{
+		this.semaine = s;
+	}
+	
+	public EmploiDuTemps(int s, ArrayList<Cours> c)
 	{
 		this.semaine = s;
 	}
@@ -28,9 +37,10 @@ public class EmploiDuTemps
 		}
 	}
 	
+	@Override
 	public String toString()
 	{
-		return("Emploi du temps de la semaine " + this.semaine + " avec les cours " + this.cours);
+		return "Emploi du temps de la semaine " + this.semaine + " avec les cours " + this.cours;
 	}
 	
 	public void afficher()

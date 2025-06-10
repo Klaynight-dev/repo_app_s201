@@ -13,22 +13,33 @@ public class Cours {
     private Professeur Professeur;
     private Salle Salle;
     private String Niveau;
+    private Professeur professeur;
 
     public Cours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) {
+        this.option = o;
+        this.elevesInscrits = e;
+        this.professeur = p;
+        this.salle = s;
+        this.niveau = n;
+    }
+
+    public Cours(int i, float t, String dh, String da, int d, String o, Professeur p, Salle s, String n) 
+    {
         this.id = i;
         this.tarif = t;
         this.dateheure = dh;
         this.danse = da;
         this.duree = d;
         this.option = o;
-        this.Professeur = p;
-        this.Salle = s;
-        this.Niveau = n;
         this.elevesInscrits = new ArrayList<Eleve>();
+        this.professeur = p;
+        this.salle = s;
+        this.niveau = n;
     }
 
     // getters
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
@@ -57,24 +68,24 @@ public class Cours {
         return option;
     }
 
+    public ArrayList<Eleve> getElevesInscrits()
+    {
+        return elevesInscrits;
+    }
+
     public Professeur getProfesseur()
     {
-        return Professeur;
+        return professeur;
     }
 
     public Salle getSalle()
     {
-        return Salle;
+        return salle;
     }
 
     public String getNiveau()
     {
-        return Niveau;
-    }
-
-    public ArrayList<Eleve> getElevesInscrits()
-    {
-        return elevesInscrits;
+        return niveau;
     }
 
     // setters
@@ -108,39 +119,80 @@ public class Cours {
         this.option = option;
     }
 
-    public void setProfesseur(Professeur p)
+    public void setElevesInscrits(ArrayList<Eleve> elevesInscrits)
     {
-        this.Professeur = p;
+        this.elevesInscrits = elevesInscrits;
     }
 
-    public void setSalle(Salle s)
+    public void setProfesseur(Professeur professeur)
     {
-        this.Salle = s;
+        this.professeur = professeur;
+    }
+    public void setSalle(Salle salle)
+    {
+        this.salle = salle;
     }
 
-    public void setNiveau(String n)
+    public void setNiveau(String niveau)
     {
-        this.Niveau = n;
+        this.niveau = niveau;
     }
-
-    public void setElevesInscrits(ArrayList<Eleve> e)
-    {
-        this.elevesInscrits = e;
-    }
-
-    public void ajouterEleve(Eleve e)
-    {
-    	this.elevesInscrits.add(e);
-    }
-
-    public void supprimerEleve(Eleve e)
-    {
-    	this.elevesInscrits.remove(e);
-    }
-
+    
     public boolean equals(Object other)
     {
     	Cours c = (Cours)other;
     	return(this.id == c.id);
+    }
+
+    public String toString()
+    {
+        return "Cours{" +
+                "id=" + id +
+                ", tarif=" + tarif +
+                ", dateheure='" + dateheure + '\'' +
+                ", danse='" + danse + '\'' +
+                ", duree=" + duree +
+                ", option='" + option + '\'' +
+                ", elevesInscrits=" + elevesInscrits +
+                ", professeur=" + professeur +
+                ", salle=" + salle +
+                ", niveau='" + niveau + '\'' +
+                '}';
+    }
+    public void afficher()
+    {
+        System.out.println(this);
+    }
+    public void ajouterEleve(Eleve e)
+    {
+        if(!elevesInscrits.contains(e))
+        {
+            elevesInscrits.add(e);
+        }
+    }
+    public void supprimerEleve(Eleve e)
+    {
+        if(elevesInscrits.contains(e))
+        {
+            elevesInscrits.remove(e);
+        }
+    }
+    public void modifierEleve(Eleve e)
+    {
+        for(Eleve iter : elevesInscrits)
+        {
+            if(e.equals(iter)) // Comparaison de l'eleve sur l'id seulement
+            {
+                iter = e;
+            }
+        }
+    }
+    public void modifierProfesseur(Professeur p)
+    {
+        this.professeur = p;
+    }
+    public void modifierSalle(Salle s)
+    {
+        this.salle = s;
     }
 }
