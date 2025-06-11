@@ -19,7 +19,7 @@ public class FenModifCours extends Stage
 	public FenModifCours() throws IOException
 	{
 		this.setTitle("Modification du cours");
-		this.setResizable(true);
+		this.setResizable(false);
 		Scene laScene = new Scene(creerSceneGraph());
 		this.setScene(laScene);
 	}
