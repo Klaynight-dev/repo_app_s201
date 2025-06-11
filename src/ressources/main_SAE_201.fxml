@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.CtrlSelectionCours">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.CtrlSelectionCours">
    <top>
       <Label text="Cours - Option(s) choisie(s) noter le nombre d'heures dans la colonne durée " BorderPane.alignment="CENTER">
          <font>
@@ -45,10 +50,10 @@
       </VBox>
    </bottom>
    <center>
-        <TableView fx:id="courseTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="240.0" prefWidth="590.0" style="-fx-pref-width: fit-content;" BorderPane.alignment="CENTER">
+        <TableView fx:id="courseTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="240.0" prefWidth="590.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="professeurColumn" text="Professeur" />
-            <TableColumn fx:id="professeurColumn1" text="Tarif" />
+            <TableColumn fx:id="tarifColumn" text="Tarif" />
                 <TableColumn fx:id="niveauColumn" text="Niveau" />
                 <TableColumn fx:id="jourColumn" text="Jour" />
                 <TableColumn fx:id="horaireColumn" text="Horaire" />
