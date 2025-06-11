@@ -18,7 +18,7 @@ public class FenNewCours extends Stage
 	public FenNewCours() throws IOException
 	{
 		this.setTitle("Création d'un nouveau cours");
-		this.setResizable(true);
+		this.setResizable(false);
 		Scene laScene = new Scene(creerSceneGraph());
 		this.setScene(laScene);
 	}
