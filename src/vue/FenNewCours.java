@@ -32,7 +32,7 @@ public class FenNewCours extends Stage
 		ctrl = loader.getController();
 		return racine;
 	}
-	public void afficherCours(Cours cours) {
-		ctrl.afficherCours(cours);
+	public void effacer() {
+		ctrl.effacer();
 	}
 }

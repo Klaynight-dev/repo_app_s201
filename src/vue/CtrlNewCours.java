@@ -1,22 +1,26 @@
 package vue;
 
+import java.time.LocalDate;
+
 import controleur.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import modele.Cours;
+import modele.Professeur;
+import modele.Salle;
 
 public class CtrlNewCours {
+
+	@FXML
+	private TextField idField;
 
     @FXML
     private TextField professeurField;
 
     @FXML
-    private TextField optionDureeField;
-
-    @FXML
-    private TextField coursNameField;
+    private TextField optionField;
 
     @FXML
     private TextField niveauField;
@@ -28,43 +32,33 @@ public class CtrlNewCours {
     private TextField jourField;
 
     @FXML
-    private TextField lieuSalleField;
+    private TextField salleField;
 
+    @FXML
+    private TextField tarifField;
+    
     @FXML
     private TextField dureeField;
 
     @FXML
+    private TextField danseField;
+    
+    @FXML
     void handleOk(ActionEvent event)
-    {
-    	/*int idProf = Integer.parseInt(this.getId().getSelectionModel().getSelectedItem());
-    	if (cbSuperieur.getSelectionModel().getSelectedIndex()==0 || cbSuperieur.getSelectionModel().getSelectedIndex()==-1) {
-    		sup = -1;
-    	} else {
-    		sup = Integer.parseInt(cbSuperieur.getSelectionModel().getSelectedItem());
-    	}
-    	float sal;
-    	if (txtSalaire.getText().isEmpty()) {
-    		sal = -1;
-    	} else {
-    		sal = Float.parseFloat(txtSalaire.getText());
-    	} 
-    	float prime;
-    	if (txtPrime.getText().isEmpty()) {
-    		prime = -1;
-    	} else {
-    		prime = Float.parseFloat(txtPrime.getText());
-    	} 
-    	Main.modifierEmploye( 	Integer.parseInt(txtMatricule.getText()),
-								txtNom.getText(),
-								txtPoste.getText(),
-								sup,
-								dpDateEmbauche.getValue().getYear(),
-								dpDateEmbauche.getValue().getMonthValue(),
-								dpDateEmbauche.getValue().getDayOfMonth(),
-								sal,
-								prime,
-								Integer.parseInt(cbDepartement.getSelectionModel().getSelectedItem())
-    	);*/
+    {			
+		Main.ajouterCours(
+				Integer.parseInt(idField.getText()), // id
+				Float.parseFloat(tarifField.getText()), // tarif
+				jourField.getText(), // jour
+				horaireField.getText(), //horaire
+				danseField.getText(), // danse
+				Integer.parseInt(dureeField.getText()), // duree
+				optionField.getText(), // option
+				new Professeur(professeurField.getText(), danseField.getText()), // professeur
+				new Salle(salleField.getText(), true, false, false), // salle
+				niveauField.getText() // niveau
+				);
+
     }
 
     @FXML
@@ -72,19 +66,18 @@ public class CtrlNewCours {
     {
     	Main.fermerNewCours();
     }
-
-	void afficherCours(Cours cours) {
-        professeurField.setText((cours.getProfesseur()).getNom());
-        coursNameField.setText(cours.getDanse());
-        niveauField.setText(cours.getNiveau());
-        horaireField.setText(cours.getHoraire());
-        jourField.setText(cours.getJour());
-        dureeField.setText(String.valueOf(cours.getDuree()));
-        optionDureeField.setText(cours.getOption());
-        lieuSalleField.setText((cours.getSalle()).getNom());
+    
+    public void effacer() {
+    	idField.clear();
+    	professeurField.clear();
+    	optionField.clear();
+    	niveauField.clear();
+    	horaireField.clear();
+    	jourField.clear();
+    	salleField.clear();
+    	tarifField.clear();
+    	dureeField.clear();
+    	danseField.clear();
     }
-    
 
-
-    
 }

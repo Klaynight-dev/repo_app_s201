@@ -46,6 +46,7 @@ public class Main extends Application{
 	
 	static public void ouvrirNewCours()
 	{
+		fNewCours.effacer();
 		fNewCours.show();
 	}
 
@@ -73,6 +74,7 @@ public class Main extends Application{
 		Cours c = new Cours(i, t, j,h, da, d, o, p, s, n);
 		// enregistrer l'ajout
 		EmploiDuTemps.ajouterCours(c);
+		fNewCours.close();
 	}
 	
 	static public void modifierCours(int i, float t, String j,String h, String da, int d, String o, Professeur p, Salle s, String n) {
