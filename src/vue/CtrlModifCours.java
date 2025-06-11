@@ -16,9 +16,6 @@ public class CtrlModifCours {
     private TextField professeurField;
 
     @FXML
-    private TextField optionField;
-
-    @FXML
     private TextField niveauField;
 
     @FXML
@@ -49,7 +46,6 @@ public class CtrlModifCours {
 				horaireField.getText(), //horaire
 				danseField.getText(), // danse
 				Integer.parseInt(dureeField.getText()), // duree
-				optionField.getText(), // option
 				new Professeur(professeurField.getText(), danseField.getText()), // professeur
 				new Salle(salleField.getText(), true, false, false), // salle
 				niveauField.getText() // niveau
@@ -80,9 +76,7 @@ public class CtrlModifCours {
         dureeField.setText(String.valueOf(cours.getDuree()));
         
         tarifField.setText(String.valueOf(cours.getTarif()));
-        
-        optionField.setText(cours.getOption());
-        
+                
         salleField.setText((cours.getSalle()).getNom());
         
         

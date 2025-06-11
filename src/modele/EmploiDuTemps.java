@@ -13,15 +13,15 @@ public class EmploiDuTemps
 	
 	
 	static public void chargementDonnees() {
-		cours.add(new Cours(0, 0, "golem", "minuit", "zouk", 30, "rien",
+		cours.add(new Cours(0, 35, "golem", "minuit", "zouk", 30,
 				new Professeur("rien", "zouk"),
 				new Salle("olympia", true, false, false), "grand maître"));
 		
-		cours.add(new Cours(1, 0, "jaaj", "midi", "macarena", 30, "tout",
+		cours.add(new Cours(1, 28, "jaaj", "midi", "macarena", 30,
 				new Professeur("rien", "macarena"),
 				new Salle("olympia", true, false, false), "nul"));
 
-		cours.add(new Cours(2, 0, "aaaaajj", "zzjioaz", "wawawa", 30, "milieu",
+		cours.add(new Cours(2, 45, "aaaaajj", "zzjioaz", "wawawa", 30,
 				new Professeur("rien", "zouk"),
 				new Salle("olympia", true, false, false), "intermediarie"));
 

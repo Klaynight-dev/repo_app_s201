@@ -30,6 +30,15 @@ public class CtrlSelectionCours {
 	@FXML
 	private Button bnAjouter;
 	
+	@FXML
+    private TableColumn<Cours, String> professeurColumn;
+	
+	@FXML
+    private TableColumn<Cours, Float> tarifColumn;
+	
+	@FXML
+    private TableColumn<Cours, String> niveauColumn;
+	
     @FXML
     private TableColumn<Cours, String> jourColumn;
 
@@ -37,17 +46,8 @@ public class CtrlSelectionCours {
     private TableColumn<Cours, String> horaireColumn;
 
     @FXML
-    private TableColumn<Cours, String> professeurColumn;
-
-    @FXML
     private TableColumn<Cours, Integer> dureeColumn;
-
-    @FXML
-    private TableColumn<Cours, String> optionDureeColumn;
-
-    @FXML
-    private TableView<Cours> courseTable;
-
+    
     @FXML
     private TableColumn<Cours, String> lieuSalleColumn;
 
@@ -55,7 +55,8 @@ public class CtrlSelectionCours {
     private TableColumn<Cours, String> coursNameColumn;
 
     @FXML
-    private TableColumn<Cours, String> niveauColumn;
+    private TableView<Cours> courseTable;
+    
 
     @FXML
     void handleAddCourse(ActionEvent event) {
@@ -114,7 +115,7 @@ public class CtrlSelectionCours {
         horaireColumn.setText("Horaire");
         professeurColumn.setText("Professeur");
         dureeColumn.setText("Durée (min)");
-        optionDureeColumn.setText("Option Durée");
+        tarifColumn.setText("Tarif");
         lieuSalleColumn.setText("Lieu/Salle");
         coursNameColumn.setText("Nom du Cours");
         niveauColumn.setText("Niveau");
@@ -123,7 +124,7 @@ public class CtrlSelectionCours {
         horaireColumn.setCellValueFactory(new PropertyValueFactory<>("horaire"));
         professeurColumn.setCellValueFactory(new PropertyValueFactory<>("professeur"));
         dureeColumn.setCellValueFactory(new PropertyValueFactory<>("duree"));
-        optionDureeColumn.setCellValueFactory(new PropertyValueFactory<>("option"));
+        tarifColumn.setCellValueFactory(new PropertyValueFactory<>("tarif"));
         lieuSalleColumn.setCellValueFactory(new PropertyValueFactory<>("salle"));
         coursNameColumn.setCellValueFactory(new PropertyValueFactory<>("danse"));
         niveauColumn.setCellValueFactory(new PropertyValueFactory<>("niveau"));
@@ -150,6 +151,10 @@ public class CtrlSelectionCours {
 				 optionSupprimer
 				 );
 		courseTable.setContextMenu(menu);
+		
+		optionModifier.setOnAction(e -> clicModifier(e));
+		optionSupprimer.setOnAction(e -> clicSupprimer(e));
+		optionAjouter.setOnAction(e -> clicAjouter(e));
     }
 
 }

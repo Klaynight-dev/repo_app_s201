@@ -9,13 +9,12 @@ public class Cours {
     private String horaire;
     private String danse;
     private int duree;
-    private String option;
     private ArrayList<Eleve> elevesInscrits;
     private Professeur professeur;
     private Salle salle;
     private String niveau;
 
-    public Cours(int i, float t, String j, String h, String da, int d, String o, Professeur p, Salle s, String n, ArrayList<Eleve> e) 
+    public Cours(int i, float t, String j, String h, String da, int d, Professeur p, Salle s, String n, ArrayList<Eleve> e) 
     {
         this.id = i;
         this.tarif = t;
@@ -23,14 +22,13 @@ public class Cours {
         this.horaire = h;
         this.danse = da;
         this.duree = d;
-        this.option = o;
         this.elevesInscrits = e;
         this.professeur = p;
         this.salle = s;
         this.niveau = n;
     }
 
-    public Cours(int i, float t, String j, String h, String da, int d, String o, Professeur p, Salle s, String n) 
+    public Cours(int i, float t, String j, String h, String da, int d, Professeur p, Salle s, String n) 
     {
         this.id = i;
         this.tarif = t;
@@ -38,7 +36,6 @@ public class Cours {
         this.horaire = h;
         this.danse = da;
         this.duree = d;
-        this.option = o;
         this.elevesInscrits = new ArrayList<Eleve>();
         this.professeur = p;
         this.salle = s;
@@ -74,11 +71,6 @@ public class Cours {
     public int getDuree()
     {
         return duree;
-    }
-
-    public String getOption()
-    {
-        return option;
     }
 
     public ArrayList<Eleve> getElevesInscrits()
@@ -132,11 +124,6 @@ public class Cours {
         this.duree = duree;
     }
 
-    public void setOption(String option)
-    {
-        this.option = option;
-    }
-
     public void setElevesInscrits(ArrayList<Eleve> elevesInscrits)
     {
         this.elevesInscrits = elevesInscrits;
@@ -171,7 +158,6 @@ public class Cours {
                 ", horaire='" + horaire + '\'' +
                 ", danse='" + danse + '\'' +
                 ", duree=" + duree +
-                ", option='" + option + '\'' +
                 ", elevesInscrits=" + elevesInscrits +
                 ", professeur=" + professeur +
                 ", salle=" + salle +

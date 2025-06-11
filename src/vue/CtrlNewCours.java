@@ -20,9 +20,6 @@ public class CtrlNewCours {
     private TextField professeurField;
 
     @FXML
-    private TextField optionField;
-
-    @FXML
     private TextField niveauField;
 
     @FXML
@@ -53,7 +50,6 @@ public class CtrlNewCours {
 				horaireField.getText(), //horaire
 				danseField.getText(), // danse
 				Integer.parseInt(dureeField.getText()), // duree
-				optionField.getText(), // option
 				new Professeur(professeurField.getText(), danseField.getText()), // professeur
 				new Salle(salleField.getText(), true, false, false), // salle
 				niveauField.getText() // niveau
@@ -70,7 +66,6 @@ public class CtrlNewCours {
     public void effacer() {
     	idField.clear();
     	professeurField.clear();
-    	optionField.clear();
     	niveauField.clear();
     	horaireField.clear();
     	jourField.clear();

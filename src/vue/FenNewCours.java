@@ -25,7 +25,7 @@ public class FenNewCours extends Stage
 
 	private Pane creerSceneGraph() throws IOException
 	{
-		File f = new File("src/ressources/new.fxml");
+		File f = new File("src/ressources2/new.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(f.toURI().toURL());
 		Pane racine = loader.load();
