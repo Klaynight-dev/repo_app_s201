@@ -50,7 +50,7 @@
       </VBox>
    </bottom>
    <center>
-        <TableView fx:id="courseTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="240.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+        <TableView fx:id="courseTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#doubleClic" prefHeight="240.0" prefWidth="590.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="professeurColumn" text="Professeur" />
             <TableColumn fx:id="tarifColumn" text="Tarif" />
